@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://pjj64spd2rjf"]
+
+[ext_resource type="Texture2D" uid="uid://bqeuridkbrlox" path="res://Assets/player/laserPink1.png" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://5bw04i4o65x3" path="res://Assets/player/shipPink_manned.png" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://c8cbbato6re7o" path="res://Assets/player/laserPink2.png" id="3_gntrk"]
+
+[node name="Player" type="Node2D"]
+
+[node name="Laser" type="Node2D" parent="."]
+
+[node name="LaserPink4" type="Sprite2D" parent="Laser"]
+position = Vector2(-2, 352)
+texture = ExtResource("1_kyqiw")
+
+[node name="LaserPink2" type="Sprite2D" parent="Laser"]
+position = Vector2(-1, 176)
+texture = ExtResource("1_kyqiw")
+
+[node name="LaserPink5" type="Sprite2D" parent="Laser"]
+position = Vector2(-2, 452)
+texture = ExtResource("1_kyqiw")
+
+[node name="LaserPink3" type="Sprite2D" parent="Laser"]
+position = Vector2(-1, 276)
+texture = ExtResource("1_kyqiw")
+
+[node name="LaserPink1" type="Sprite2D" parent="Laser"]
+position = Vector2(-1, 88)
+texture = ExtResource("1_kyqiw")
+
+[node name="LaserPink6" type="Sprite2D" parent="Laser"]
+position = Vector2(-2, 552)
+texture = ExtResource("3_gntrk")
+
+[node name="ShipPinkManned" type="Sprite2D" parent="."]
+texture = ExtResource("1_rpqav")
