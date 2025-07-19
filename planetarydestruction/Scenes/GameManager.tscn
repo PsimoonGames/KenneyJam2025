@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://pjj64spd2rjf" path="res://Scenes/Player.tscn" id="3_7cxpe"]
 [ext_resource type="PackedScene" uid="uid://d4h37sihqwk7u" path="res://Scenes/HUD.tscn" id="5_mmuqr"]
 
-[node name="GameManager" type="Node2D"]
+[node name="GameManager" type="Node2D" node_paths=PackedStringArray("player", "hud")]
 script = ExtResource("1_m2tc1")
+player = NodePath("Player")
+hud = NodePath("HUD")
 
 [node name="map" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_b7dir")]
 player = NodePath("../Player")
