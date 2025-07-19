@@ -1,13 +1,49 @@
 extends Node2D
 
+var health_cost = 6
+var dmg_cost = 10
+var fr_cost = 8
+
 func update_power(value):
-	PlayerStats.update_power(value)
+	PlayerStats.power += value
 	$Power.text = "Power: " + str(PlayerStats.power)
 
 func update_score(value):
-	PlayerStats.update_score(value)
+	PlayerStats.score += value
 	$Score.text = "Score: " + str(PlayerStats.score)
 
 func update_health(value):
-	PlayerStats.update_health(value)
+	PlayerStats.health += value
 	$Health2.text = "Health: " + str(PlayerStats.health) + "/" + str(PlayerStats.max_health)
+
+
+func _on_health_pressed() -> void:
+	if PlayerStats.power >= health_cost:
+		PlayerStats.power -= health_cost
+		PlayerStats.hp_level += 1
+		PlayerStats.max_health = round(PlayerStats.max_health * 1.1)
+		health_cost = round(health_cost * 1.2)
+		$Health/Price.text = "Upgrade: " + str(health_cost)
+		$Health/Level.text = "Lv. " + str(PlayerStats.hp_level)
+		$Power.text = "Power: " + str(PlayerStats.power)
+		$Health2.text = "Health: " + str(PlayerStats.health) + "/" + str(PlayerStats.max_health)
+
+func _on_damage_pressed() -> void:
+	if PlayerStats.power >= dmg_cost:
+		PlayerStats.power -= dmg_cost
+		PlayerStats.dmg_level += 1
+		PlayerStats.damage = round(PlayerStats.damage * 1.3)
+		dmg_cost = round(dmg_cost * 1.2)
+		$Damage/Price.text = "Upgrade: " + str(dmg_cost)
+		$Damage/Level.text = "Lv. " + str(PlayerStats.dmg_level)
+		$Power.text = "Power: " + str(PlayerStats.power)
+
+func _on_fire_rate_pressed() -> void:
+	if PlayerStats.power >= fr_cost:
+		PlayerStats.power -= fr_cost
+		PlayerStats.fr_level += 1
+		PlayerStats.fireRate = PlayerStats.fireRate * 0.98
+		fr_cost = round(fr_cost * 1.2)
+		$Damage/Price.text = "Upgrade: " + str(fr_cost)
+		$Damage/Level.text = "Lv. " + str(PlayerStats.fr_level)
+		$Power.text = "Power: " + str(PlayerStats.power)

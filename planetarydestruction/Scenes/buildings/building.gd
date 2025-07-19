@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if taking_damage:
-		current_health -= 10 * delta
+		current_health -= PlayerStats.damage * delta
 		$ProgressBar.value = (current_health / max_health) * 100
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

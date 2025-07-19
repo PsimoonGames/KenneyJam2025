@@ -34,7 +34,7 @@ offset_right = 200.0
 offset_bottom = 114.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Upgrade: 10"
+text = "Upgrade: 5"
 
 [node name="Level" type="Label" parent="Health"]
 layout_mode = 0
@@ -110,7 +110,7 @@ offset_right = 200.0
 offset_bottom = 114.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Upgrade: 10"
+text = "Upgrade: 8"
 
 [node name="Level" type="Label" parent="Fire Rate"]
 layout_mode = 0
@@ -149,3 +149,7 @@ offset_bottom = 38.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Health: 100/100"
+
+[connection signal="pressed" from="Health" to="." method="_on_health_pressed"]
+[connection signal="pressed" from="Damage" to="." method="_on_damage_pressed"]
+[connection signal="pressed" from="Fire Rate" to="." method="_on_fire_rate_pressed"]
