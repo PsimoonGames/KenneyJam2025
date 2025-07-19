@@ -4,6 +4,10 @@ var health_cost = 6
 var dmg_cost = 10
 var fr_cost = 8
 
+
+func _process(delta: float) -> void:
+	$Health2.text = "Health: " + str(PlayerStats.health) + "/" + str(PlayerStats.max_health)
+
 func update_power(value):
 	PlayerStats.power += value
 	$Power.text = "Power: " + str(PlayerStats.power)
@@ -33,7 +37,7 @@ func _on_damage_pressed() -> void:
 		PlayerStats.power -= dmg_cost
 		PlayerStats.dmg_level += 1
 		PlayerStats.damage = round(PlayerStats.damage * 1.3)
-		dmg_cost = round(dmg_cost * 1.2)
+		dmg_cost = round(dmg_cost * 1.4)
 		$Damage/Price.text = "Upgrade: " + str(dmg_cost)
 		$Damage/Level.text = "Lv. " + str(PlayerStats.dmg_level)
 		$Power.text = "Power: " + str(PlayerStats.power)
@@ -43,7 +47,7 @@ func _on_fire_rate_pressed() -> void:
 		PlayerStats.power -= fr_cost
 		PlayerStats.fr_level += 1
 		PlayerStats.fireRate = PlayerStats.fireRate * 0.98
-		fr_cost = round(fr_cost * 1.2)
+		fr_cost = round(fr_cost * 1.3)
 		$Damage/Price.text = "Upgrade: " + str(fr_cost)
 		$Damage/Level.text = "Lv. " + str(PlayerStats.fr_level)
 		$Power.text = "Power: " + str(PlayerStats.power)
