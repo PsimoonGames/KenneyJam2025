@@ -1,7 +1,7 @@
 extends Node2D
 
 var buildingList = []
-var building = preload("res://Scenes/buildings/Skyscraper.tscn")
+var building = [preload("res://Scenes/buildings/Skyscraper.tscn"), preload("res://Scenes/buildings/BlockOfFlats.tscn"), preload("res://Scenes/buildings/SmallBuilding.tscn")]
 var enemy_missile = preload("res://Scenes/enemy_missiles.tscn")
 var friendly_missile = preload("res://Scenes/friendly_missile.tscn")
 var missile_timer_max = 5
@@ -25,11 +25,19 @@ func _process(delta: float) -> void:
 	
 	for i in buildingList:
 		if i.current_health <= 0:
+			if i.type == 1:
+				hud.update_power(10)
+				hud.update_score(100)
+			elif i.type == 2:
+				hud.update_power(25)
+				hud.update_score(250)
+			else:
+				hud.update_power(50)
+				hud.update_score(500)
+			AudioController.play("res://audio/sfx/collapse.mp3")
 			i.queue_free()
 			buildingList.erase(i)
 			new_building()
-			hud.update_power(10)
-			hud.update_score(100)
 	
 	missile_timer += delta
 	if missile_timer > missile_timer_max:
@@ -69,7 +77,7 @@ func new_building():
 	else:
 		minDistance = buildingList[len(buildingList) - 1].position.x
 	distance = randi_range(400, 1200)
-	build = building.instantiate()
+	build = building[randi_range(0, len(building) - 1)].instantiate()
 	add_child(build)
 	buildingList.append(build)
 	build.position.y = 810

@@ -1,12 +1,13 @@
 extends Node2D
 
 @export var base_health : int
+@export var type : int
 var max_health
 var current_health
 var taking_damage = false
 
 func _ready() -> void:
-	max_health = 200 + round(PlayerStats.game_timer / 10)
+	max_health = base_health + (round(PlayerStats.game_timer / 10) * type)
 	current_health = max_health
 
 func _process(delta: float) -> void:

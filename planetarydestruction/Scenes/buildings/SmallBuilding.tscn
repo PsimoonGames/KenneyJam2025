@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=4 uid="uid://dmt1phvaxc6ff"]
+
+[ext_resource type="TileSet" uid="uid://sqdohnjoya2j" path="res://Assets/Tilemap/TileSet.tres" id="1_8b3ui"]
+[ext_resource type="Script" uid="uid://fctjpvv18jmu" path="res://scripts/building.gd" id="1_245h4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b3ui"]
+size = Vector2(130, 162)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_245h4")
+base_health = 200
+type = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD+////AAAJAAoAAAABAP//AAALAAoAAAD/////AAAKAAoAAAAAAP//AAAKAAoAAAD+//7/AAAJAAkAAAD+//3/AAAJAAkAAAD+//z/AAAJAAkAAAABAPz/AAALAAkAAAABAP3/AAALAAkAAAABAP7/AAALAAkAAAD///z/AAAKAAUAAAD///3/AAAKAAUAAAD///7/AAAKAAUAAAAAAP7/AAAKAAUAAAAAAP3/AAAKAAUAAAAAAPz/AAAKAAUAAAAAAPv/AAAKAAoAADD///v/AAAKAAoAADD+//v/AAALAAoAADABAPv/AAAJAAoAADA=")
+tile_set = ExtResource("1_8b3ui")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD/////AAAaABEAAAD///z/AAAaABAAAAAAAPz/AAAaABAAAAAAAP3/AAAaABAAAAD///3/AAAaABAAAAD///7/AAAaABAAAAAAAP7/AAAaABAAAAA=")
+tile_set = ExtResource("1_8b3ui")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -80)
+shape = SubResource("RectangleShape2D_8b3ui")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -136.0
+offset_top = 31.0
+offset_right = 134.0
+offset_bottom = 58.0
+value = 100.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
