@@ -6,8 +6,8 @@ var current_health
 var taking_damage = false
 
 func _ready() -> void:
-	max_health = 200
-	current_health = 200
+	max_health = 200 + round(PlayerStats.game_timer / 10)
+	current_health = max_health
 
 func _process(delta: float) -> void:
 	if taking_damage:

@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://wgrolb18qat0"]
+[gd_scene load_steps=6 format=3 uid="uid://wgrolb18qat0"]
 
 [ext_resource type="Script" uid="uid://nu8m6rit46l3" path="res://scripts/game_manager.gd" id="1_m2tc1"]
 [ext_resource type="PackedScene" uid="uid://ctbs2gos6ngnl" path="res://Scenes/map.tscn" id="2_b7dir"]
 [ext_resource type="PackedScene" uid="uid://pjj64spd2rjf" path="res://Scenes/Player.tscn" id="3_7cxpe"]
 [ext_resource type="PackedScene" uid="uid://d4h37sihqwk7u" path="res://Scenes/HUD.tscn" id="5_mmuqr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7dir"]
+size = Vector2(1932, 831)
 
 [node name="GameManager" type="Node2D" node_paths=PackedStringArray("player", "hud")]
 script = ExtResource("1_m2tc1")
@@ -17,3 +20,13 @@ player = NodePath("../Player")
 position = Vector2(910, 200)
 
 [node name="HUD" parent="." instance=ExtResource("5_mmuqr")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(956, 405.5)
+shape = SubResource("RectangleShape2D_b7dir")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

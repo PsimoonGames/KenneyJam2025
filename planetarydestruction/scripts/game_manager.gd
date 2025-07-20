@@ -2,9 +2,11 @@ extends Node2D
 
 var buildingList = []
 var building = preload("res://Scenes/buildings/Skyscraper.tscn")
-var missile = preload("res://Scenes/enemy_missiles.tscn")
+var enemy_missile = preload("res://Scenes/enemy_missiles.tscn")
+var friendly_missile = preload("res://Scenes/friendly_missile.tscn")
 var missile_timer_max = 5
 var missile_timer = 0
+var shoot_missile_timer = 0
 @export var player: Node2D
 @export var hud: Node2D
 
@@ -34,20 +36,30 @@ func _process(delta: float) -> void:
 		new_missile()
 		missile_timer = 0
 	
+	shoot_missile_timer += delta
+	PlayerStats.game_timer += delta
+	
+	if PlayerStats.health <= 0:
+		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
+#spawning enemy missiles
 func new_missile():
 	var spawn_location = Vector2()
 	if randi_range(1,2) == 1:
 		spawn_location.x = -10
 	else:
 		spawn_location.x = 1930
-	spawn_location.y = randi_range(0, 300)
+	spawn_location.y = randi_range(0, 400)
 	
-	var enemy = missile.instantiate()
+	var enemy = enemy_missile.instantiate()
 	enemy.position = spawn_location
 	enemy.setDirection(player.position)
 	add_child(enemy)
+	
+	if missile_timer_max > 0.3:
+		missile_timer_max -= 0.005
 
+#spawns new building
 func new_building():
 	var distance
 	var build
@@ -62,3 +74,13 @@ func new_building():
 	buildingList.append(build)
 	build.position.y = 810
 	build.position.x = minDistance + distance
+
+#for player shooting missile
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+		if shoot_missile_timer >= PlayerStats.fireRate:
+			var friendly = friendly_missile.instantiate()
+			friendly.position = player.position
+			friendly.setDirection(event.position)
+			add_child(friendly)
+			shoot_missile_timer = 0

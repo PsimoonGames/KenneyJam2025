@@ -14,5 +14,12 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player") and enemy:
-		PlayerStats.health -= 10
+		PlayerStats.take_damage(10)
+		queue_free()
+	
+	if area.is_in_group("missile"):
+		if enemy:
+			PlayerStats.score += 5
+			PlayerStats.power += 1
+		area.get_parent().queue_free()
 		queue_free()
