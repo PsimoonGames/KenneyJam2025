@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerStats="*res://playerStats.gd"
-AudioManager="*res://Scenes/AudioManager.tscn"
 
 [display]
 

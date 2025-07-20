@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://c7v0a6enbd17"]
 
 [ext_resource type="TileSet" uid="uid://sqdohnjoya2j" path="res://Assets/Tilemap/TileSet.tres" id="1_0mx4b"]
-[ext_resource type="Script" uid="uid://fctjpvv18jmu" path="res://scripts/building.gd" id="1_ngefd"]
+[ext_resource type="Script" uid="uid://fctjpvv18jmu" path="res://Scenes/buildings/building.gd" id="1_ngefd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mx4b"]
 size = Vector2(322, 482)
