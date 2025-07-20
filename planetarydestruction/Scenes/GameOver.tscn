@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://d1ltfntjmbjcc"]
+[gd_scene load_steps=8 format=4 uid="uid://d1ltfntjmbjcc"]
 
 [ext_resource type="Texture2D" uid="uid://vf02njfn220l" path="res://Assets/Backgrounds/backgroundColorForest.png" id="1_k52d1"]
 [ext_resource type="Script" uid="uid://cot04lexeun6s" path="res://scripts/game_over.gd" id="1_ktc4i"]
 [ext_resource type="Texture2D" uid="uid://1hugiaw508fo" path="res://Assets/Tilemap/tilemap.png" id="2_ktc4i"]
+[ext_resource type="FontFile" uid="uid://c2nb21jivs66r" path="res://Assets/Kenney Future.ttf" id="4_rdiyk"]
+[ext_resource type="Texture2D" uid="uid://dt8b68tmvux37" path="res://Assets/UI/button_square_header_small_rectangle_screws.png" id="4_uib17"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_df05h"]
 texture = ExtResource("2_ktc4i")
@@ -1080,6 +1082,7 @@ offset_right = 359.5
 offset_bottom = 255.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_rdiyk")
 theme_override_font_sizes/font_size = 80
 text = "GAME OVER"
 horizontal_alignment = 1
@@ -1090,31 +1093,42 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -359.5
-offset_top = 200.0
-offset_right = 359.5
-offset_bottom = 310.0
+offset_left = -363.0
+offset_top = 297.0
+offset_right = 356.0
+offset_bottom = 407.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_rdiyk")
 theme_override_font_sizes/font_size = 80
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -61.5
-offset_top = -405.0
-offset_right = 61.5
-offset_bottom = -351.0
+offset_left = -193.0
+offset_top = -428.0
+offset_right = 191.0
+offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 30
+texture_normal = ExtResource("4_uib17")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 46.0
+offset_right = 299.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_rdiyk")
+theme_override_font_sizes/font_size = 50
 text = "Retry"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_button_pressed"]

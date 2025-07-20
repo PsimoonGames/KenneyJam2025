@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4h37sihqwk7u"]
+[gd_scene load_steps=6 format=3 uid="uid://d4h37sihqwk7u"]
 
 [ext_resource type="Texture2D" uid="uid://b1m7wefpeixf7" path="res://Assets/UI/green.png" id="1_jo1ms"]
 [ext_resource type="Script" uid="uid://cv30rrfwal315" path="res://scripts/hud.gd" id="1_s3jbq"]
 [ext_resource type="Texture2D" uid="uid://bw3f7oqltcjaf" path="res://Assets/UI/red.png" id="1_sd512"]
+[ext_resource type="FontFile" uid="uid://c2nb21jivs66r" path="res://Assets/Kenney Future.ttf" id="3_c3eba"]
 [ext_resource type="Texture2D" uid="uid://chljenqc71xb1" path="res://Assets/UI/button_square_header_large_rectangle_screws.png" id="3_psnte"]
 
 [node name="HUD" type="Node2D"]
@@ -23,6 +24,7 @@ offset_top = 19.0
 offset_right = 124.0
 offset_bottom = 61.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Health"
 
@@ -33,6 +35,7 @@ offset_top = 72.0
 offset_right = 200.0
 offset_bottom = 114.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Upgrade: 5"
 
@@ -43,6 +46,7 @@ offset_top = 16.0
 offset_right = 359.0
 offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Lv. 1"
 horizontal_alignment = 2
@@ -61,6 +65,7 @@ offset_top = 18.0
 offset_right = 150.0
 offset_bottom = 60.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Damage"
 
@@ -71,6 +76,7 @@ offset_top = 72.0
 offset_right = 201.0
 offset_bottom = 114.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Upgrade: 10"
 
@@ -81,6 +87,7 @@ offset_top = 14.0
 offset_right = 355.0
 offset_bottom = 56.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Lv. 1"
 horizontal_alignment = 2
@@ -99,6 +106,7 @@ offset_top = 19.0
 offset_right = 124.0
 offset_bottom = 61.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Fire Rate"
 
@@ -109,6 +117,7 @@ offset_top = 72.0
 offset_right = 200.0
 offset_bottom = 114.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Upgrade: 8"
 
@@ -119,16 +128,18 @@ offset_top = 16.0
 offset_right = 359.0
 offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Lv. 1"
 horizontal_alignment = 2
 
 [node name="Power" type="Label" parent="."]
-offset_left = 1750.0
+offset_left = 1726.0
 offset_top = 15.0
-offset_right = 1875.0
+offset_right = 1902.0
 offset_bottom = 57.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Power: 0"
 
@@ -138,8 +149,10 @@ offset_top = 15.0
 offset_right = 975.0
 offset_bottom = 57.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Score: 0"
+horizontal_alignment = 1
 
 [node name="Health2" type="Label" parent="."]
 offset_left = 12.0
@@ -147,6 +160,7 @@ offset_top = 15.0
 offset_right = 79.0
 offset_bottom = 38.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
 text = "Health: 100/100"
 
