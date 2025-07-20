@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://di5pi4dvix3hg"]
 
-[ext_resource type="Script" uid="uid://cna0o3d33bqxu" path="res://Scenes/missiles.gd" id="1_qvcgg"]
+[ext_resource type="Script" uid="uid://cna0o3d33bqxu" path="res://scripts/missiles.gd" id="1_qvcgg"]
 [ext_resource type="Texture2D" uid="uid://dwsmc8uq4ea1t" path="res://Assets/spaceMissiles_001.png" id="1_st3sw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvcgg"]
