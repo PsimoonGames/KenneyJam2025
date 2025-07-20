@@ -25,6 +25,7 @@ func update_health(value):
 #upgrade health
 func _on_health_pressed() -> void:
 	if PlayerStats.power >= health_cost:
+		AudioController.play("res://audio/sfx/buttonsound.mp3")
 		PlayerStats.power -= health_cost
 		PlayerStats.hp_level += 1
 		PlayerStats.max_health = PlayerStats.max_health + 10
@@ -37,6 +38,7 @@ func _on_health_pressed() -> void:
 #upgrade damage
 func _on_damage_pressed() -> void:
 	if PlayerStats.power >= dmg_cost:
+		AudioController.play("res://audio/sfx/buttonsound.mp3")
 		PlayerStats.power -= dmg_cost
 		PlayerStats.dmg_level += 1
 		PlayerStats.damage = round(PlayerStats.damage * 1.2)
@@ -48,10 +50,11 @@ func _on_damage_pressed() -> void:
 #upgrade fire rate
 func _on_fire_rate_pressed() -> void:
 	if PlayerStats.power >= fr_cost:
+		AudioController.play("res://audio/sfx/buttonsound.mp3")
 		PlayerStats.power -= fr_cost
 		PlayerStats.fr_level += 1
 		PlayerStats.fireRate = PlayerStats.fireRate * 0.98
 		fr_cost = round(fr_cost * 1.3)
-		$Damage/Price.text = "Upgrade: " + str(fr_cost)
-		$Damage/Level.text = "Lv. " + str(PlayerStats.fr_level)
+		$"Fire Rate"/Price.text = "Upgrade: " + str(fr_cost)
+		$"Fire Rate"/Level.text = "Lv. " + str(PlayerStats.fr_level)
 		$Power.text = "Power: " + str(PlayerStats.power)

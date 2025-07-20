@@ -57,7 +57,7 @@ func new_missile():
 	add_child(enemy)
 	
 	if missile_timer_max > 0.3:
-		missile_timer_max -= 0.005
+		missile_timer_max -= 0.01
 
 #spawns new building
 func new_building():
