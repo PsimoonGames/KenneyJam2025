@@ -41,9 +41,9 @@ text = "Upgrade: 5"
 
 [node name="Level" type="Label" parent="Health"]
 layout_mode = 0
-offset_left = 293.0
+offset_left = 277.0
 offset_top = 16.0
-offset_right = 359.0
+offset_right = 360.0
 offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_c3eba")
@@ -82,10 +82,10 @@ text = "Upgrade: 10"
 
 [node name="Level" type="Label" parent="Damage"]
 layout_mode = 0
-offset_left = 289.0
-offset_top = 14.0
-offset_right = 355.0
-offset_bottom = 56.0
+offset_left = 273.0
+offset_top = 15.0
+offset_right = 356.0
+offset_bottom = 57.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
@@ -123,9 +123,9 @@ text = "Upgrade: 8"
 
 [node name="Level" type="Label" parent="Fire Rate"]
 layout_mode = 0
-offset_left = 293.0
+offset_left = 277.0
 offset_top = 16.0
-offset_right = 359.0
+offset_right = 360.0
 offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_c3eba")
@@ -134,10 +134,10 @@ text = "Lv. 1"
 horizontal_alignment = 2
 
 [node name="Power" type="Label" parent="."]
-offset_left = 1726.0
-offset_top = 15.0
-offset_right = 1902.0
-offset_bottom = 57.0
+offset_left = 1595.0
+offset_top = 16.0
+offset_right = 1771.0
+offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30
@@ -155,10 +155,10 @@ text = "Score: 0"
 horizontal_alignment = 1
 
 [node name="Health2" type="Label" parent="."]
-offset_left = 12.0
-offset_top = 15.0
-offset_right = 79.0
-offset_bottom = 38.0
+offset_left = 161.0
+offset_top = 14.0
+offset_right = 471.0
+offset_bottom = 49.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_c3eba")
 theme_override_font_sizes/font_size = 30

@@ -10,3 +10,4 @@ func play(file):
 		if !i.playing:
 			i.stream = load(file)
 			i.play()
+			break
